@@ -11,7 +11,7 @@ function Vehicles() {
 
   // Fetch vehicles from Spring Boot API
   useEffect(() => {
-    fetch("http://localhost:8080/api/vehicles")
+    fetch(`${import.meta.env.VITE_API_URL}/api/vehicles`)
       .then((response) => response.json())
       .then((data) => {
         setVehicles(data);

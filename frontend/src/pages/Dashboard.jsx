@@ -16,7 +16,7 @@ function Dashboard() {
       return;
     }
 
-    fetch(`http://localhost:8080/api/bookings/user/${userId}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/bookings/user/${userId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch bookings");
@@ -44,7 +44,7 @@ function Dashboard() {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/bookings/${bookingId}/cancel`,
+        `${import.meta.env.VITE_API_URL}/api/bookings/${bookingId}/cancel`,
         {
           method: "PUT",
         }
