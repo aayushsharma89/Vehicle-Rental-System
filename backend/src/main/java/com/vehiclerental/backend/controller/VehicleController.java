@@ -12,6 +12,10 @@ import com.vehiclerental.backend.repository.VehicleRepository;
 
 @RestController
 @RequestMapping("/api/vehicles")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://vehicle-rental-system-1-wtsb.onrender.com"
+})
 public class VehicleController {
 
     @Autowired
